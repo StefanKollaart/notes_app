@@ -1,1 +1,45 @@
-<p>It works! yay.</p>
+<h1>Weeks</h1>
+
+<h2>Week 1</h2>
+<% @lessondays.each do |day| %>
+
+  <% if day.course_week == 1 %>
+  <p><%= link_to day.subject, lesson_day_path(day.id)%> <em><%= day.date.strftime("%A %d %B %Y") %> </em></p>
+<% end %>
+<% end %>
+
+<h2>Week 2</h2>
+
+<% @lessondays.each do |day| %>
+  <% if day.course_week == 2 %>
+  <p><%= link_to day.subject, lesson_day_path(day.id)%></p>
+<% end %>
+<% end %>
+
+<h2>Week 3</h2>
+
+<% @lessondays.each do |day| %>
+  <% if day.course_week == 3%>
+  <p><%= link_to day.subject, lesson_day_path(day.id)%></p>
+<% end %>
+<% end %>
+
+  <!-- # # => LessonDay(
+  id: integer,
+  course_day: integer,
+  course_week: integer,
+  subject: string,
+  date: date
+  teacher: string
+  created_at: datetime,
+  # updated_at: datetime) -->
+
+  <!-- Maja and Tim
+  /                 root
+  /lessondays       root
+  /lessondays/1     1 means, with course_day 1
+
+
+  Stefan and Robbert
+  /
+  /notes/1      specific note -->
