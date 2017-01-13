@@ -1,4 +1,4 @@
-<h1>Notes per day</h1>
+<h1>Notes</h1>
 
 <% @notes.each do |note| %>
   <p><%= link_to note.note_topic, note_path(note.id) %> - written by <%= note.student_name %></p>
