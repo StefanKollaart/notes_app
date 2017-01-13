@@ -3,3 +3,5 @@
 <% @notes.each do |note| %>
   <p><%= link_to note.note_topic, note_path(note.id) %> - written by <%= note.student_name %></p>
 <% end %>
+
+<%= link_to "[Create]", new_note_path %>

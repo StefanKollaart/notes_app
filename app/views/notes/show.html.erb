@@ -6,3 +6,7 @@
 <p><%= @note.note_links %></p>
 <p><%= @note.note_code %></p>
 <p><%= @note.teacher_note %></p>
+
+<%= link_to "[Edit]", edit_note_path(@note.id) %>
+<%= link_to "[Delete]", note_path(@note.id), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to "[Show all notes]", notes_path %>
