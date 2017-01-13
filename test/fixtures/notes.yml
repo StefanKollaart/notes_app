@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_name: MyString
+  note_topic: MyString
+  note_text: MyText
+  note_links: MyText
+  note_code: MyText
+  teacher_note: MyText
+  student_info: MyText
+
+two:
+  student_name: MyString
+  note_topic: MyString
+  note_text: MyText
+  note_links: MyText
+  note_code: MyText
+  teacher_note: MyText
+  student_info: MyText
