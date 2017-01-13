@@ -1,0 +1,12 @@
+<h2><%= @lessonday.subject%></h2>
+<% if @lessonday.notes.any?%>
+<ul><% @lessonday.notes.each do |note| %>
+  <li><%= note.note_topic %>
+    <i>written by
+  <%= note.student_name %> 
+  </i></li>
+  <% end %>
+</ul>
+<% else %>
+<p>No notes found for this subject. </p>
+<% end %>
