@@ -1,27 +1,31 @@
 <%= form_for @note do |f| %>
-  <%= f.label :student_name %>
+  <%= f.label "Written by: " %>
   <%= f.text_field :student_name %>
 
-  <%= f.label :note_topic %>
+  <%= f.label "Topic:" %>
   <%= f.text_field :note_topic %>
 
-  <%= f.label :note_text %>
+  <%= f.label "Note:" %>
   <%= f.text_field :note_text %>
 
-  <%= f.label :note_links %>
+  <%= f.label "Link:" %>
   <%= f.text_field :note_links %>
 
-  <%= f.label :note_code %>
+  <%= f.label "Code:" %>
   <%= f.text_field :note_code %>
 
-  <%= f.label :teacher_note %>
-  <%= f.text_field :teacher_note %>
+  <%= f.label "Teacher's note: " if !(@note.new_record?)%>
+  <%= f.text_field :teacher_note if !(@note.new_record?)%>
 
-  <%= f.label :student_info %>
+  <%= f.label "Student info: " %>
   <%= f.text_field :student_info %>
 
-  <%= f.label :lesson_day_id %>
-  <%= f.number_field :lesson_day_id %>
+  <%= f.label "Lesson day: " %>
+  <%= f.select :lesson_day_id do %>
+  <% LessonDay.all.each do |p| %>
+    <%= content_tag(:option, "#{p.date}: #{p.subject} - #{p.teacher}", value: p.id) %>
+  <% end %>
+<% end %>
 
   <%= f.submit (@note.new_record? ? "Create" : "Update") %>
 <% end %>
