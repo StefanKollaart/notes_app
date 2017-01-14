@@ -1,6 +1,12 @@
+
 <h2><%= @lessonday.subject%></h2>
+<p>Teacher: <%= @lessonday.teacher%><br>
+Date: <%= @lessonday.date.strftime("%A %e %B %Y") %></p>
+
 <% if @lessonday.notes.any?%>
-<ul><% @lessonday.notes.each do |note| %>
+<ul>
+  <li>Notes</li>
+  <% @lessonday.notes.each do |note| %>
   <li><%= link_to note.note_topic, note_path(note.id) %>
     <% if note.created_at != note.updated_at %>
     updated by

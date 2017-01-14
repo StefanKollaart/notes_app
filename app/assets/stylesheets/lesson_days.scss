@@ -16,17 +16,54 @@
   flex-direction: row;
   background-color: #purple;
   border: 1px solid black;
-  margin: 5px;
-  width: 15em;
+  margin: 0 1em 1em;
+  padding-bottom: 10px;
+  width: 17em;
 }
 
 section p {
-  padding: 10px;
+  margin: 0 0 10px 10px;
+  color: #444;
 }
 
 section h2 {
-  padding-left: 45px;
-  background:url('directory.png') red no-repeat;
+  margin-top: 0;
+  color: #f4f4f4;
+  padding: 10px 0 10px 45px;
+  background:url('directory-icon.png') #D32F2F no-repeat;
   background-size: 35px 35px;
   height: 45px;
+}
+
+section h3 {
+    margin: 0 0 10px 10px;
+}
+
+section a {
+  color: #000;
+}
+
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  border: 1px solid grey;
+}
+
+li {
+  padding: 7px 0 7px 35px;
+  background:url('note-icon.png') no-repeat;
+  background-size: 21px 21px;
+}
+li:nth-child(2n+1) {
+  background: #CCC;
+  background:url('note-icon.png') #eaeaea no-repeat;
+  background-size: 21px 21px;
+}
+
+li:first-child {
+  background: none;
+  background: #eaeaea;
+  font-weight: 600;
 }
