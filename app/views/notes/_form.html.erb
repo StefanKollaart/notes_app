@@ -1,4 +1,40 @@
+<style>
+  body {
+    width: 100%;
+    margin: 10px;
+  }
+  
+  .form_item {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+  }
 
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .small_textfield input {
+    width: 80%;
+  }
+
+  #note_lesson_day_id {
+    width: 80%;
+  }
+
+  .big_textfield textarea {
+    width: 80%;
+    min-height: 300px;
+    text-align: left;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+</style>
 
 <%= form_for @note do |f| %>
 
@@ -8,34 +44,49 @@
   <% end %>
   </ul>
 
-  <%= f.label "Written by: " %>
-  <%= f.text_field :student_name %>
+  <div class="form_item">
+    <%= f.label "Written by: " %>
+    <span class="small_textfield"><%= f.text_field :student_name %></span>
+  </div>
 
+  <div class="form_item">
   <%= f.label "Link:" %>
-  <%= f.text_field :note_links %>
+  <span class="small_textfield"><%= f.text_field :note_links %></span>
+  </div>
 
+  <div class="form_item">
   <%= f.label "Student's e-mail': " %>
-  <%= f.text_field :student_info %>
+  <span class="small_textfield"><%= f.text_field :student_info %></span>
+  </div>
 
+  <div class="form_item">
   <%= f.label "Lesson day: " %>
-  <%= f.select :lesson_day_id do %>
-  <% LessonDay.all.each do |p| %>
-    <%= content_tag(:option, "#{p.date}: #{p.subject} - #{p.teacher}",
-    value: p.id) %>
-  <% end %>
-<% end %>
+    <%= f.select :lesson_day_id do %>
+      <% LessonDay.all.each do |p| %>
+        <span class="small_textfield"><%= content_tag(:option, "#{p.date}: #{p.subject} - #{p.teacher}",
+        value: p.id) %></span>
+      <% end %>
+    <% end %>
+  </div>
 
-<%= f.label "Topic: " %>
-<%= f.text_field :note_topic %>
+  <div class="form_item">
+    <%= f.label "Topic: " %>
+    <span class="small_textfield"><%= f.text_field :note_topic %></span>
+  </div>
 
-<%= f.label "Note:" %>
-<%= f.text_area :note_text, cols: "30", rows: "10" %>
+  <div class="form_item">
+    <%= f.label "Note:" %>
+    <span class="big_textfield"><%= f.text_area :note_text, cols: "30", rows: "10" %></span>
+  </div>
 
-<%= f.label "Code:" %>
-<%= f.text_area :note_code, cols: "30", rows: "10" %>
+  <div class="form_item">
+    <%= f.label "Code:" %>
+    <span class="big_textfield"><%= f.text_area :note_code, cols: "30", rows: "10" %></span>
+  </div>
 
-<%= f.label "Teacher's note: " if !(@note.new_record?)%>
-<%= f.text_area :teacher_note, cols: "30", rows: "10" if !(@note.new_record?)%>
-
+  <div class="form_item">
+    <%= f.label "Teacher's note: " if !(@note.new_record?)%>
+    <span class="big_textfield"><%= f.text_area :teacher_note, cols: "30", rows: "10" if !(@note.new_record?)%></span>
+  </div>
   <%= f.submit (@note.new_record? ? "Create" : "Update") %>
 <% end %>

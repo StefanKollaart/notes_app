@@ -1,13 +1,31 @@
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .note_metadata li {
+    margin-bottom: 3px;
+  }
+
+  .note_metadata {
+    margin-bottom: 5px;
+  }
+  strong {
+    font-size: 1.2em
+  }
+</style>
+
 <h1><%= @note.note_topic %></h1>
 
-<ul>
+<ul class="note_metadata">
 <li><strong>Written by: </strong><%= @note.student_name %></li>
 <li><strong><%= @note.student_name %>'s email: </strong><%= mail_to @note.student_info, @note.student_info  %></li>
 <li><strong>Topic: </strong><%= @note.note_topic %></li>
 <li><strong>Link: </strong> <%= link_to @note.note_links, @note.note_links, target: "_blank" %></li>
 </ul>
 
-<ul>
+<ul class="note_content">
 <li><strong>Note: </strong><%= simple_format(@note.note_text) %></li>
 <li><strong>Code: </strong><pre><%= @note.note_code %></pre></li>
 <li><strong>Teacher's note: </strong><%= simple_format(@note.teacher_note) %></li>
