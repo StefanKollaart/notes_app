@@ -7,5 +7,9 @@ class Note < ApplicationRecord
   validates :note_text, length: { maximum: 2000 }
   validates :note_code, length: { maximum: 2000 }
 
+  def self.order_notes_by_creation
+     order(:created_at)
+   end
+
   belongs_to :lesson_day
 end
