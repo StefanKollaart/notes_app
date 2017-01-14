@@ -6,37 +6,39 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 0 auto;
   margin-bottom: 150px;
   max-width: 940px;
+  margin: 20px 0;
 }
 
 #flex-container section {
+  text-align: center;
   background-color: #e0e0e0;
   flex-direction: row;
   background-color: #purple;
-  border: 1px solid black;
+  border: 0px solid black;
   margin: 0 1em 1em;
   padding-bottom: 10px;
   width: 17em;
+  -webkit-box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
 }
 
 section p {
-  margin: 0 0 10px 10px;
-  color: #444;
+
 }
 
 section h2 {
   margin-top: 0;
   color: #f4f4f4;
-  padding: 10px 0 10px 45px;
-  background:url('directory-icon.png') #D32F2F no-repeat;
-  background-size: 35px 35px;
+  padding: 10px;
+  background-color: #D32F2F;
   height: 45px;
 }
 
 section h3 {
-    margin: 0 0 10px 10px;
+  margin: 0 0 10px 10px;
 }
 
 section a {
