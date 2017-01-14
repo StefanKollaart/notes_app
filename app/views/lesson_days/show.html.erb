@@ -2,9 +2,17 @@
 <% if @lessonday.notes.any?%>
 <ul><% @lessonday.notes.each do |note| %>
   <li><%= link_to note.note_topic, note_path(note.id) %>
-    <i>written by
+    <% if note.created_at != note.updated_at %>
+    updated by
+    <% else %>
+    created by
+    <% end %>
+    </body>
+    </body>
+    <em>written by
   <%= note.student_name %>
-  </i></li>
+  <%= time_ago_in_words(note.updated_at) %> ago
+</em></li>
   <% end %>
 </ul>
 <% else %>
