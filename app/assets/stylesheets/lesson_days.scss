@@ -7,7 +7,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   margin-bottom: 150px;
-  max-width: 940px;
+  max-width: 100%;
   margin: 20px 0;
 }
 
@@ -17,9 +17,9 @@
   flex-direction: row;
   background-color: #purple;
   border: 0px solid black;
-  margin: 0 1em 1em;
+  margin: 1.2em 1.8em 1.8em;
   padding-bottom: 10px;
-  width: 17em;
+  width: 20em;
   -webkit-box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
