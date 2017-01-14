@@ -2,12 +2,15 @@
 
 <ul>
 <li><strong>Written by: </strong><%= @note.student_name %></li>
-<li><strong><%= @note.student_name %>'s contact details: </strong><%= @note.student_info %></li>
+<li><strong><%= @note.student_name %>'s email: </strong><%= mail_to @note.student_info, @note.student_info  %></li>
 <li><strong>Topic: </strong><%= @note.note_topic %></li>
-<li><strong>Note: </strong><%= @note.note_text %></li>
 <li><strong>Link: </strong> <%= link_to @note.note_links, @note.note_links, target: "_blank" %></li>
-<li><strong>Code: </strong><%= @note.note_code %></li>
-<li><strong>Teacher's note: </strong><%= @note.teacher_note %></li>
+</ul>
+
+<ul>
+<li><strong>Note: </strong><%= simple_format(@note.note_text) %></li>
+<li><strong>Code: </strong><pre><%= @note.note_code %></li></pre>
+<li><strong>Teacher's note: </strong><%= simple_format(@note.teacher_note) %></li>
 </ul>
 
 <%= link_to "[Edit]", edit_note_path(@note.id) %>

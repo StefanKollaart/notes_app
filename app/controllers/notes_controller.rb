@@ -47,4 +47,8 @@ class NotesController < ApplicationController
 
     redirect_to notes_path
   end
+
+  def nl2br(s)
+    s.gsub(/\n/, '<br>')
+end
 end
