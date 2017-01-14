@@ -1,6 +1,13 @@
 
 
 <%= form_for @note do |f| %>
+
+  <ul>
+  <% @note.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+
   <%= f.label "Written by: " %>
   <%= f.text_field :student_name %>
 
@@ -18,13 +25,14 @@
   <% end %>
 <% end %>
 
+<%= f.label "Topic: " %>
+<%= f.text_field :note_topic %>
+
 <%= f.label "Note:" %>
 <%= f.text_area :note_text, cols: "30", rows: "10" %>
 
 <%= f.label "Code:" %>
 <%= f.text_area :note_code, cols: "30", rows: "10" %>
-
-    <textarea id="edit" name="content"></textarea>
 
 <%= f.label "Teacher's note: " if !(@note.new_record?)%>
 <%= f.text_area :teacher_note, cols: "30", rows: "10" if !(@note.new_record?)%>
