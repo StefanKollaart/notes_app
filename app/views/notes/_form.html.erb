@@ -13,7 +13,8 @@
   <%= f.label "Lesson day: " %>
   <%= f.select :lesson_day_id do %>
   <% LessonDay.all.each do |p| %>
-    <%= content_tag(:option, "#{p.date}: #{p.subject} - #{p.teacher}", value: p.id) %>
+    <%= content_tag(:option, "#{p.date}: #{p.subject} - #{p.teacher}",
+    value: p.id) %>
   <% end %>
 <% end %>
 

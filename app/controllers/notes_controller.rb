@@ -13,7 +13,9 @@ class NotesController < ApplicationController
   end
 
   def create
-    note_params = params.require(:note).permit(:student_name, :note_topic, :note_text, :note_links, :note_code, :teacher_note, :student_info, :lesson_day_id)
+    note_params = params.require(:note).permit(:student_name, :note_topic,
+    :note_text, :note_links, :note_code, :teacher_note, :student_info,
+    :lesson_day_id)
 
     @note = Note.new(note_params)
 
@@ -31,7 +33,9 @@ class NotesController < ApplicationController
   def update
     @note = Note.find(params[:id])
 
-    note_params = params.require(:note).permit(:student_name, :note_topic, :note_text, :note_links, :note_code, :teacher_note, :student_info, :lesson_day_id)
+    note_params = params.require(:note).permit(:student_name, :note_topic,
+    :note_text, :note_links, :note_code, :teacher_note, :student_info,
+    :lesson_day_id)
 
     if @note.update_attributes(note_params)
       redirect_to @note
