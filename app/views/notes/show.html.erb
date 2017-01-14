@@ -31,6 +31,9 @@
 <li><strong>Teacher's note: </strong><%= simple_format(@note.teacher_note) %></li>
 </ul>
 
-<%= link_to "[Edit]", edit_note_path(@note.id) %>
-<%= link_to "[Delete]", note_path(@note.id), method: :delete, data: { confirm: "Are you sure?" } %>
-<%= link_to "[Show all notes on this subject]", lesson_day_path(@note.lesson_day_id) %>
+<p><%= link_to 'Edit', edit_note_path(@note.id) %> || <%= link_to 'Delete', note_path(@note.id), method: :delete, data: { confirm: "Are you sure?" } %></p>
+
+<div class="navigation_tree">
+
+  <span>>> <%= link_to 'Weeks', root_path %> >> <%= link_to 'Day', lesson_day_path(@note.lesson_day_id) %> >> Note</span>
+</div>

@@ -24,5 +24,8 @@ Date: <%= @lessonday.date.strftime("%A %e %B %Y") %></p>
 <% else %>
 <p>No notes found for this subject. </p>
 <% end %>
+<p><%= link_to 'Add new note', new_note_path(@note) %></p>
 
-<%= link_to 'Add new note', new_note_path(@note) %>
+<div class="navigation_tree">
+  <span>>> <%= link_to 'Weeks', root_path %> >> Day</span>
+</div>
