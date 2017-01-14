@@ -2,22 +2,10 @@
   <%= f.label "Written by: " %>
   <%= f.text_field :student_name %>
 
-  <%= f.label "Topic:" %>
-  <%= f.text_field :note_topic %>
-
-  <%= f.label "Note:" %>
-  <%= f.text_field :note_text %>
-
   <%= f.label "Link:" %>
   <%= f.text_field :note_links %>
 
-  <%= f.label "Code:" %>
-  <%= f.text_field :note_code %>
-
-  <%= f.label "Teacher's note: " if !(@note.new_record?)%>
-  <%= f.text_field :teacher_note if !(@note.new_record?)%>
-
-  <%= f.label "Student info: " %>
+  <%= f.label "Student's e-mail': " %>
   <%= f.text_field :student_info %>
 
   <%= f.label "Lesson day: " %>
@@ -26,6 +14,17 @@
     <%= content_tag(:option, "#{p.date}: #{p.subject} - #{p.teacher}", value: p.id) %>
   <% end %>
 <% end %>
+
+<%= f.label "Note:" %>
+<%= f.text_area :note_text, cols: "30", rows: "10" %>
+
+<%= f.label "Code:" %>
+<%= f.text_area :note_code, cols: "30", rows: "10" %>
+
+    <textarea id="edit" name="content"></textarea>
+
+<%= f.label "Teacher's note: " if !(@note.new_record?)%>
+<%= f.text_area :teacher_note, cols: "30", rows: "10" if !(@note.new_record?)%>
 
   <%= f.submit (@note.new_record? ? "Create" : "Update") %>
 <% end %>
