@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
 
   def index
-    @notes = Note.all
+    @notes = Note.all.order_notes_by_creation.reverse
   end
 
   def show
@@ -54,5 +54,5 @@ class NotesController < ApplicationController
 
   def nl2br(s)
     s.gsub(/\n/, '<br>')
-end
+  end
 end
