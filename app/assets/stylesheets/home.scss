@@ -1,17 +1,28 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-html {
+#home-page {
   background-image: url("classroom.png");
 }
 
-header {
-  display: none;
+.benefits {
+  font-size: 14px;
+  color: rgb(211, 47, 47);
+  text-align: center;
+  line-height: 40px;
+  border-radius: 25px;
 }
 
-.banner {
-  background-color: rgb(211, 47, 47);
-  display:block;
-  margin: 0 auto;
+#home-page .firstcontainer {
+  background: white;
+}
 
+#home-page .banner {
+  text-align: center;
+  background: rgba(255,255,255,0.9);
+  color: black;
+  font-weight: bolder;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 25px;
 }
