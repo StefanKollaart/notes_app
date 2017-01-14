@@ -23,6 +23,12 @@
    position: relative;
  }
 
+ .go_to_class {
+   padding-top: 30px;
+   text-decoration: none;
+
+ }
+
 header {
     background-color: rgb(211, 47, 47);
     color: white;

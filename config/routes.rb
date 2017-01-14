@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "lesson_days#index"
+  root "home#index"
   resources :notes
   resources :lesson_days
   resources :home
