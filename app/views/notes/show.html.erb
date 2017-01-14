@@ -1,12 +1,14 @@
 <h1><%= @note.note_topic %></h1>
 
-<p><strong>Written by: </strong><%= @note.student_name %></p>
-<p><strong><%= @note.student_name %>'s contact details: </strong><%= @note.student_info %></p>
-<p><strong>Topic: </strong><%= @note.note_topic %></p>
-<p><strong>Note: </strong><%= @note.note_text %></p>
-<p><strong>Link: </strong> <%= link_to @note.note_links, @note.note_links, target: "_blank" %></p>
-<p><strong>Code: </strong><%= @note.note_code %></p>
-<p><strong>Teacher's note: </strong><%= @note.teacher_note %></p>
+<ul>
+<li><strong>Written by: </strong><%= @note.student_name %></li>
+<li><strong><%= @note.student_name %>'s contact details: </strong><%= @note.student_info %></li>
+<li><strong>Topic: </strong><%= @note.note_topic %></li>
+<li><strong>Note: </strong><%= @note.note_text %></li>
+<li><strong>Link: </strong> <%= link_to @note.note_links, @note.note_links, target: "_blank" %></li>
+<li><strong>Code: </strong><%= @note.note_code %></li>
+<li><strong>Teacher's note: </strong><%= @note.teacher_note %></li>
+</ul>
 
 <%= link_to "[Edit]", edit_note_path(@note.id) %>
 <%= link_to "[Delete]", note_path(@note.id), method: :delete, data: { confirm: "Are you sure?" } %>
