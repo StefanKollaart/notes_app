@@ -1,3 +1,32 @@
 // Place all the styles related to the LessonDays controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#flex-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  max-width: 940px;
+}
+
+#flex-container section {
+  background-color: #e0e0e0;
+  flex-direction: row;
+  background-color: #purple;
+  border: 1px solid black;
+  margin: 5px;
+  width: 15em;
+}
+
+section p {
+  padding: 10px;
+}
+
+section h2 {
+  padding-left: 45px;
+  background:url('directory.png') red no-repeat;
+  background-size: 35px 35px;
+  height: 45px;
+}
