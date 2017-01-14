@@ -1,12 +1,14 @@
 <h2><%= @lessonday.subject%></h2>
 <% if @lessonday.notes.any?%>
 <ul><% @lessonday.notes.each do |note| %>
-  <li><%= note.note_topic %>
+  <li><%= link_to note.note_topic, note_path(note.id) %>
     <i>written by
-  <%= note.student_name %> 
+  <%= note.student_name %>
   </i></li>
   <% end %>
 </ul>
 <% else %>
 <p>No notes found for this subject. </p>
 <% end %>
+
+<%= link_to 'Add new note', new_note_path(@note) %>
