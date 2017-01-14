@@ -10,6 +10,7 @@
     width: 100%;
   }
 
+
   label {
     display: block;
     margin-bottom: 5px;
@@ -62,7 +63,13 @@
   <div class="form_item">
   <%= f.label "Lesson day: " %>
     <%= f.select :lesson_day_id do %>
+    <% current_week = 0 %>
+    <span class="small_textfield week-seperator "><%= content_tag(:option, "------ Select subject------") %></span>
       <% LessonDay.all.each do |p| %>
+        <% if p.course_week != current_week %>
+        <% current_week = p.course_week %>
+        <span class="small_textfield week-seperator "><%= content_tag(:option, "------ Week #{p.course_week} ------") %></span>
+        <% end %>
         <span class="small_textfield"><%= content_tag(:option, "#{p.date}: #{p.subject} - #{p.teacher}",
         value: p.id) %></span>
       <% end %>
