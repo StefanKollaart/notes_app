@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+ html {
+   font-family: 'Roboto', sans-serif;
+ }
+
+header {
+    background-color: rgb(211, 47, 47);
+    color: white;
+    letter-spacing: 0.5px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  background-color: #c2272d;
+  color: white;
+  letter-spacing: 0.5px;
+}
