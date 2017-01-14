@@ -1,12 +1,22 @@
 <h2><%= @lessonday.subject%></h2>
 <% if @lessonday.notes.any?%>
 <ul><% @lessonday.notes.each do |note| %>
-  <li><%= note.note_topic %>
-    <i>written by
-  <%= note.student_name %> 
-  </i></li>
+  <li><%= link_to note.note_topic, note_path(note.id) %>
+    <% if note.created_at != note.updated_at %>
+    updated by
+    <% else %>
+    created by
+    <% end %>
+    </body>
+    </body>
+    <em>written by
+  <%= note.student_name %>
+  <%= time_ago_in_words(note.updated_at) %> ago
+</em></li>
   <% end %>
 </ul>
 <% else %>
 <p>No notes found for this subject. </p>
 <% end %>
+
+<%= link_to 'Add new note', new_note_path(@note) %>
