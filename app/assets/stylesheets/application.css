@@ -58,6 +58,11 @@ a:visited {
   left: 25px;
 }
 
+#flex-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
 p.power_text {
   font-size: 10px;
   position: absolute;
