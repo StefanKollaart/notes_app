@@ -3,9 +3,9 @@
 <p>Teacher: <%= @lessonday.teacher%><br>
 Date: <%= @lessonday.date.strftime("%A %e %B %Y") %></p>
 
-<% if @lessonday.notes.any?%>
 <ul>
   <li>Notes</li>
+<% if @lessonday.notes.any?%>
   <% @lessonday.notes.each do |note| %>
   <li><%= link_to note.note_topic, note_path(note.id) %>
     <% if note.created_at != note.updated_at %>
@@ -22,8 +22,10 @@ Date: <%= @lessonday.date.strftime("%A %e %B %Y") %></p>
   <% end %>
 </ul>
 <% else %>
-<p>No notes found for this subject. </p>
+
+<li>No notes found for this subject. </i>
 <% end %>
+</ul>
 <p><%= link_to 'Add new note', new_note_path(@note) %></p>
 
 <div class="navigation_tree">
