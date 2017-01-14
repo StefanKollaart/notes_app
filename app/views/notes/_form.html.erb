@@ -29,6 +29,17 @@
     text-align: left;
   }
 
+  .submit_button {
+        width: 100%;
+
+  }
+  .submit_button input {
+    width: 80%;
+    text-align: center;
+    background: rgb(211, 47, 47);
+    color: #eff1f7;
+  }
+
 </style>
 
 <%= form_for @note do |f| %>
@@ -89,5 +100,5 @@
     <%= f.label "Teacher's note: " if !(@note.new_record?)%>
     <span class="big_textfield"><%= f.text_area :teacher_note, cols: "30", rows: "10" if !(@note.new_record?)%></span>
   </div>
-  <%= f.submit (@note.new_record? ? "Create" : "Update") %>
+  <div class="submit_button"><%= f.submit (@note.new_record? ? "Create" : "Update") %></div>
 <% end %>
