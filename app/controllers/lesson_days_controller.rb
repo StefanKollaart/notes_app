@@ -6,4 +6,6 @@ class LessonDaysController < ApplicationController
   def show
     @lessonday = LessonDay.find(params[:id])
   end
+
+
 end
